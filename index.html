@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Beach Volleyball Scorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- Header / Match Info -->
+        <header class="match-header">
+            <div class="team-input-group">
+                <div class="team-input t1">
+                    <input type="text" id="name1" value="Team 1" placeholder="Team 1">
+                    <div class="indicator"></div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team-input t2">
+                    <input type="text" id="name2" value="Team 2" placeholder="Team 2">
+                    <div class="indicator"></div>
+                </div>
+            </div>
+            <button id="save-names" class="icon-btn" aria-label="Save Names">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+                    <polyline points="17 21 17 13 7 13 7 21"></polyline>
+                    <polyline points="7 3 7 8 15 8"></polyline>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Main Scoring Area -->
+        <main class="scoreboard">
+
+            <!-- Sets Display -->
+            <div class="sets-display">
+                <div class="set-score t1">
+                    <span class="label">SETS</span>
+                    <span class="value" id="sets1">0</span>
+                    <div class="set-controls">
+                        <button class="set-btn plus" data-team="1" data-action="inc-set">+</button>
+                        <button class="set-btn minus" data-team="1" data-action="dec-set">−</button>
+                    </div>
+                </div>
+                <div class="sets-divider">:</div>
+                <div class="set-score t2">
+                    <span class="label">SETS</span>
+                    <span class="value" id="sets2">0</span>
+                    <div class="set-controls">
+                        <button class="set-btn plus" data-team="2" data-action="inc-set">+</button>
+                        <button class="set-btn minus" data-team="2" data-action="dec-set">−</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Points Display (Big Buttons) -->
+            <div class="points-area">
+                <button class="point-btn t1" id="btn-p1">
+                    <span class="score-value" id="points1">0</span>
+                    <span class="tap-hint">TAP TO SCORE</span>
+                    <div class="minus-btn" id="minus-p1" title="-1 Point">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                </button>
+                <div class="points-divider"></div>
+                <button class="point-btn t2" id="btn-p2">
+                    <span class="score-value" id="points2">0</span>
+                    <span class="tap-hint">TAP TO SCORE</span>
+                    <div class="minus-btn" id="minus-p2" title="-1 Point">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="3">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls-bar">
+                <button class="control-btn" id="undo-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 7v6h6"></path>
+                        <path d="M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13"></path>
+                    </svg>
+                    Undo
+                </button>
+                <button class="control-btn" id="switch-sides-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 17h2v2H2v-2h2"></path>
+                        <path d="M20 5H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z"></path>
+                        <polyline points="15 5 15 17 9 17 9 5"></polyline>
+                    </svg>
+                    Switch
+                </button>
+                <button class="control-btn destructive" id="reset-match-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18"></path>
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                    </svg>
+                    Reset
+                </button>
+            </div>
+
+            <div class="status-bar" id="status-msg">Ready</div>
+        </main>
+    </div>
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

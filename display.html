@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beach Volleyball Display</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="display.css">
+</head>
+
+<body>
+
+    <div class="display-container" id="display-container">
+        <!-- Team 1 Side -->
+        <div class="team-panel t1">
+            <div class="team-name" id="name1">TEAM 1</div>
+            <div class="set-score-display">
+                <span class="set-label">SETS</span>
+                <span class="set-value" id="sets1">0</span>
+            </div>
+            <div class="points-display" id="points1">0</div>
+        </div>
+
+        <!-- Middle Divider / Info -->
+        <div class="middle-bar">
+            <div class="logo">VS</div>
+            <div class="match-info">LIVE</div>
+        </div>
+
+        <!-- Team 2 Side -->
+        <div class="team-panel t2">
+            <div class="team-name" id="name2">TEAM 2</div>
+            <div class="set-score-display">
+                <span class="set-label">SETS</span>
+                <span class="set-value" id="sets2">0</span>
+            </div>
+            <div class="points-display" id="points2">0</div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Hint -->
+    <div class="fullscreen-hint">Click for Fullscreen</div>
+
+    <script src="display.js"></script>
+</body>
+
+</html>
